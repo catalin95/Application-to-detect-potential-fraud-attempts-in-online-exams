@@ -32,7 +32,7 @@ class Notificare(object):
         client = Client(self.cont_sid, self.cont_token)
         
         sms_trimis = client.messages.create(
-                                             #from_ ='+15139734159',
+                                             #from_ ='number',
                                              from_='number',
                                              body = 'Tentativa frauda detectata - Imposibilitate detectare miscare',
                                              to = 'number'
