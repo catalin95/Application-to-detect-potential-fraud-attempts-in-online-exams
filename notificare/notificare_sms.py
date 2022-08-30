@@ -3,12 +3,12 @@ from twilio.rest import Client
 class Notificare(object):
     
     #variabilele care vor tine datele de cont
-    cont_sid = 'ACe52f3238b49c33adad91beeb9eac7a19'
-    cont_token = '7c0934e86b85d5f01c219a9afb5bfc47'
-    new_cont_sid = 'ACecc04998179bde8efe8995d94a5dd5a7'
-    new_cont_token = 'c6ac7755ac3d382208b951b6c01458b8'
-    #test_cont_sid = 'ACf3aff70e6130995922ede5e9a3bb790e'
-    #test_cont_token = '1bcb9473f9d858c53e2e099e9e27efeb'
+    cont_sid = 'conti_sid'
+    cont_token = 'cont_token'
+    new_cont_sid = 'new_cont_sid'
+    new_cont_token = 'new_cont_token'
+    #test_cont_sid = ''
+    #test_cont_token = ''
     mesaj = ''
     
     def __init__(self, mesaj):
@@ -18,10 +18,10 @@ class Notificare(object):
         client = Client(self.new_cont_sid, self.new_cont_token)
         
         sms_trimis = client.messages.create(
-                                             #from_ ='+15139734159',
-                                             from_='+19854972850',
+                                             #from_ ='number',
+                                             from_='number',
                                              body = self.mesaj,
-                                             to = '+40785628812'
+                                             to = 'number'
                                            )
 
         
@@ -33,9 +33,9 @@ class Notificare(object):
         
         sms_trimis = client.messages.create(
                                              #from_ ='+15139734159',
-                                             from_='+19854972850',
+                                             from_='number',
                                              body = 'Tentativa frauda detectata - Imposibilitate detectare miscare',
-                                             to = '+40785628812'
+                                             to = 'number'
                                            )
 
         
